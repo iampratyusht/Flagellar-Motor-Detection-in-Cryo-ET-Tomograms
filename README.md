@@ -18,8 +18,8 @@ This bottleneck creates a need for **automated image processing** solutions. Thi
 
 project/
 ├── visualize.py                 # Script to preview labeled image slices
-├── yaml_data_utils.py            # YAML generator for dataset
-├── main.py                     # Model loader and training logic
+├── yaml_data_utils.py           # YAML generator for dataset
+├── main.py                      # Model loader and training logic
 │   ├──Yolomodelloader
 │   └──train_yolo_model
 ├── inference.py                 # Parallel and dynamic batching inference
@@ -45,14 +45,38 @@ Make sure your dataset follows this structure:
 root_dir\
 ├── train/
 │   ├── tomo000abc
-│   │   ├── slice\_000.jpg
-│   │   ├── slice\_001.jpg
+│   │   ├── slice_000.jpg
+│   │   ├── slice_001.jpg
 │   │   └── ...
 │   └── ...
 ├── test/
-│   └── tomo\_003/
-├── train_labels.csv/
+│   └── tomo000xyz
+│       ├── slice_000.jpg
+│       ├── slice_001.jpg
+│       └── ...
+├── train_labels.csv
 
+
+````
+Parsed yaml dataset follows this structure:
+
+```
+
+data.yaml
+├── images
+│   ├──train
+│   │   ├── .\path\tomo000abc\slice_0000.jpg
+│   │   ├── .\path\tomo000abc\slice_0001.jpg
+│   │   └── ...
+│   ├──val
+│   │   └── ...
+├── labels
+│   ├──train
+│   │   ├── .\path\tomo000abc\slice_0000.txt
+│   │   ├── .\path\tomo000abc\slice_0001.txt
+│   │   └── ...
+│   ├──val/
+│   │   └── ...
 
 ````
 
