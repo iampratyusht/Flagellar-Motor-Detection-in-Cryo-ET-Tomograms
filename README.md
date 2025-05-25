@@ -42,15 +42,15 @@ Make sure your dataset follows this structure:
 
 ```
 
-root_dir\
+root_dir/
 ├── train/
-│   ├── tomo000abc
+│   ├── tomo000abc/
 │   │   ├── slice_000.jpg
 │   │   ├── slice_001.jpg
 │   │   └── ...
 │   └── ...
 ├── test/
-│   └── tomo000xyz
+│   └── tomo000xyz/
 │       ├── slice_000.jpg
 │       ├── slice_001.jpg
 │       └── ...
@@ -62,16 +62,16 @@ Parsed yaml dataset follows this structure:
 
 ```
 
-data.yaml
-├── images
-│   ├──train
+data.yaml/
+├── images/
+│   ├──train/
 │   │   ├── .\path\tomo000abc\slice_0000.jpg
 │   │   ├── .\path\tomo000abc\slice_0001.jpg
 │   │   └── ...
-│   ├──val
+│   ├──val/
 │   │   └── ...
-├── labels
-│   ├──train
+├── labels/
+│   ├──train/
 │   │   ├── .\path\tomo000abc\slice_0000.txt
 │   │   ├── .\path\tomo000abc\slice_0001.txt
 │   │   └── ...
