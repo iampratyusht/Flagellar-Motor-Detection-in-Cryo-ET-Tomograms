@@ -1,5 +1,5 @@
-# 🧠 Flagellar Motor Detection in Cryo-ET Tomograms
-## 🧬 Introduction
+# Flagellar Motor Detection in Cryo-ET Tomograms
+## Introduction
 The **flagellar motor** is a molecular machine that facilitates the motility of many microorganisms, playing a key role in processes ranging from chemotaxis to pathogenesis. 
 
 **Cryogenic Electron Tomography (cryo-ET)** enables the imaging of these nanomachines in near-native conditions. However, identifying flagellar motors in these 3D reconstructions (tomograms) is **labor-intensive**. Challenges include:
@@ -12,7 +12,7 @@ This bottleneck creates a need for **automated image processing** solutions. Thi
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 
@@ -36,7 +36,7 @@ project/
 
 ---
 
-## 📁 Dataset Structure
+## Dataset Structure
 
 Make sure your dataset follows this structure:
 
@@ -86,7 +86,7 @@ data.yaml/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 Install the required libraries using:
 
@@ -107,7 +107,7 @@ numpy
 
 ---
 
-## 🖼️ Visualize Dataset Images
+## Visualize Dataset Images
 
 Preview how YOLO labels align with image slices:
 
@@ -120,7 +120,7 @@ Preview how YOLO labels align with image slices:
 
 ---
 
-## 📄 Generate YOLO `data.yaml`
+## Generate YOLO `data.yaml`
 
 To auto-generate the `data.yaml` config file:
 
@@ -135,7 +135,7 @@ python yaml_data_utils.py \
 ---
 
 
-## 🧠 Train the Model
+## Train the Model
 
 Run training using your dataset and selected YOLO version:
 
@@ -155,7 +155,7 @@ Trained weights and evaluation plots will be saved under `./weights/motor_detect
 
 ---
 
-## 🔍 Run Inference on Test Data
+## Run Inference on Test Data
 
 ```bash
 python inference.py \
@@ -168,7 +168,7 @@ This script processes slices using **GPU-optimized dynamic batching**.
 
 ---
 
-## 🧠 Supported YOLO Models
+## Supported YOLO Models
 
 Compatible with all [Ultralytics YOLOv8](https://docs.ultralytics.com) models:
 
@@ -181,7 +181,7 @@ Choose via `--model_version` or use `--model_path` for a custom checkpoint.
 
 ---
 
-## 🚀 Dynamic Batch Inference + GPU Profiling
+## Dynamic Batch Inference + GPU Profiling
 
 The `inference.py` script:
 
@@ -200,7 +200,7 @@ streams = [torch.cuda.Stream() for _ in range(min(4, self.batch_size))]
 
 ---
 
-## 🧪 Evaluation and Plotting
+## Evaluation and Plotting
 
 After training, validation loss curves and best epoch information are printed:
 
@@ -210,17 +210,17 @@ best_epoch, best_val_loss = evaluate.plot_loss_curve(run_dir)
 
 ---
 
-## 🧩 Applicability to Other Domains
+## Applicability to Other Domains
 
 This pipeline is well-suited for other **3D imaging tasks**, such as:
 
-* 🧠 **MRI or CT scan slice detection**
-* 🔬 **Volume electron microscopy**
-* 🏗️ **Tomographic reconstruction in materials science**
+* **MRI or CT scan slice detection**
+* **Volume electron microscopy**
+* **Tomographic reconstruction in materials science**
 
 ---
 
-## 📬 Submitting Predictions
+## Submitting Predictions
 
 The final predictions are saved to `submission.csv` in the format required by your competition platform or benchmark.
 
